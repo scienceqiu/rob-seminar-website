@@ -87,14 +87,17 @@
             const username = document.getElementById("username").value;
             const password = document.getElementById("password").value;
 
-            const validUsername = "a";
-            const validPassword = "a";
+            const validUsername = "Professor";
+            const validPassword = "Nourbakhsh";
 
             if (username === validUsername && password === validPassword) {
                 window.location.href = "concept_map.html";
             } else {
                 alert("Invalid username or password. Try again!");
             }
+        }
+        function failLogin() {
+                window.location.href = "bad.html";
         }
     </script>
 </head>
@@ -104,7 +107,7 @@
             <h2 class="mb-3">This website uses cookies to enhance your experience.</h2>
             <p>Please accept or decline to proceed.</p>
             <button class="btn btn-success" onclick="handleCookieChoice(true)">Accept</button>
-            <button class="btn btn-danger" onclick="handleCookieChoice(false)">Decline</button>
+            <button class="btn btn-danger" onclick="handleCookieChoice(false); failLogin();">Decline</button>
         </div>
     </div>
 
@@ -113,11 +116,11 @@
         <div class="form-container w-50 mx-auto">
             <form onsubmit="event.preventDefault(); validateLogin();">
                 <div class="mb-3">
-                    <label for="username" class="form-label">Username:</label>
+                    <label for="username" class="form-label">Username (the username is "Professor" for purposes of this demonstration):</label>
                     <input type="text" id="username" name="username" class="form-control" required>
                 </div>
                 <div class="mb-3">
-                    <label for="password" class="form-label">Password:</label>
+                    <label for="password" class="form-label">Password (the password is "Nourbakhsh" for purposes of this demonstration:</label>
                     <input type="password" id="password" name="password" class="form-control" required>
                 </div>
                 <button type="submit" class="btn btn-primary w-100">Login</button>
